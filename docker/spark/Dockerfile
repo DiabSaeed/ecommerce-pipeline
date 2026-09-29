@@ -1,6 +1,6 @@
 FROM spark:3.5.7-python3
 
-USER root
+USER 0
 
 RUN apt-get update && \
     apt-get install -y python3-pip && \
