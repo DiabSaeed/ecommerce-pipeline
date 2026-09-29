@@ -6,7 +6,7 @@ x-airflow-common: &airflow-common
     context: .
     dockerfile: docker/airflow/Dockerfile
   environment:
-    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://\({POSTGRES_USER:-airflow}:\){POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
     AIRFLOW__CORE__LOAD_EXAMPLES: "false"
   volumes:
@@ -104,6 +104,7 @@ services:
       SNOWFLAKE_WAREHOUSE: ${SNOWFLAKE_WAREHOUSE}
     networks:
       - data_pipeline
+    entrypoint: [""]
     command: tail -f /dev/null 
 
   # =========================================================
