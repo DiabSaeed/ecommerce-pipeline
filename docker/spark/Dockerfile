@@ -1,4 +1,4 @@
-FROM spark:3.5.7-python3
+FROM spark:3.5.7-scala2.12-java17-python3-ubuntu
 
 USER 0
 
@@ -12,6 +12,7 @@ RUN pip3 install uv
 RUN uv pip install --system --no-cache \
     pandas
 
-WORKDIR /opt/spark/jobs
+RUN mkdir -p /opt/spark/.ivy2 && \
+    chown -R 1000:1000 /opt/spark/.ivy2
 
-USER 1000
+WORKDIR /opt/spark/jobs
