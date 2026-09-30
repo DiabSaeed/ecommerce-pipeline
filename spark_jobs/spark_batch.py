@@ -20,7 +20,7 @@ sf_options = {
     "sfDatabase": os.getenv("SNOWFLAKE_DATABASE_SPARK", "ECOMMERCE_DB"),
     "sfSchema": os.getenv("SNOWFLAKE_SCHEMA", "RAW"),
     "sfWarehouse": os.getenv("SNOWFLAKE_WAREHOUSE_SPARK", "COMPUTE_WH"),
-    "sfRole": os.getenv("SNOWFLAKE_ROLE_SPARK", "ACCOUNTADMIN")
+    "sfRole": os.getenv("SNOWFLAKE_ROLE_SPARK", "INGESTION")
 }
 
 

@@ -37,7 +37,8 @@ try:
         producer.produce(
             ORDER_TOPIC, 
             value=json.dumps(order_dict).encode('utf-8'), 
-            callback=delivery_report
+            callback=delivery_report,
+            key=order_dict["customer_id"]
         )
         num_items = random.randint(1, 5)
         for _ in range(num_items):

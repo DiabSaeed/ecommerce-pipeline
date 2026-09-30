@@ -27,7 +27,13 @@ with DAG(
         api_version='auto',
         auto_remove='force',
         mount_tmp_dir=False,
-        command='/opt/spark/bin/spark-submit --packages net.snowflake:snowflake-jdbc:3.14.4,net.snowflake:spark-snowflake_2.12:2.12.0-spark_3.4 /opt/spark/jobs/spark_batch.py',
+        command=(
+    '/opt/spark/bin/spark-submit '
+    '--packages '
+    'net.snowflake:spark-snowflake_2.12:3.2.2-spark_3.5,'
+    'net.snowflake:snowflake-jdbc:4.3.2 '
+    '/opt/spark/jobs/spark_batch.py'
+),
         docker_url='unix://var/run/docker.sock',
         network_mode='ecommerce-datapipeline_data_pipeline',
         mounts=[
@@ -44,6 +50,7 @@ with DAG(
                     'SNOWFLAKE_DATABASE_SPARK': os.getenv("SNOWFLAKE_DATABASE_SPARK", "ECOMMERCE_DB"),
                     'SNOWFLAKE_SCHEMA': os.getenv("SNOWFLAKE_SCHEMA", "RAW"),
                     'SNOWFLAKE_WAREHOUSE_SPARK': os.getenv("SNOWFLAKE_WAREHOUSE_SPARK", "COMPUTE_WH"),
+                    'SNOWFLAKE_ROLE_SPARK':os.getenv("SNOWFLAKE_ROLE_SPARK")
                 }
     )
 
@@ -53,7 +60,7 @@ with DAG(
         image='ecommerce-datapipeline-dbt:latest',
         api_version='auto',
         auto_remove='force',
-        command='dbt run --profiles-dir /usr/app/dbt',
+        command='run --profiles-dir /usr/app/dbt',
         docker_url='unix://var/run/docker.sock',
         network_mode='ecommerce-datapipeline_data_pipeline',
         mount_tmp_dir=False,
