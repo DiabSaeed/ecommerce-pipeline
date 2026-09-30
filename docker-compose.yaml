@@ -78,6 +78,8 @@ services:
     build:
       context: .
       dockerfile: docker/spark/Dockerfile
+    env_file:
+      - .env
     volumes:
       - ./spark_jobs:/opt/spark/jobs
     depends_on:
