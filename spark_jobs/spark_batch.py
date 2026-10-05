@@ -29,9 +29,9 @@ DATA_DIRECTORY = "/opt/spark/jobs/data"
 csv_files = glob.glob(f"{DATA_DIRECTORY}/*.csv")
 
 if not csv_files:
-    print(f"لم يتم العثور على أي ملفات CSV في المسار: {DATA_DIRECTORY}")
+    print(f"No Data Found in: {DATA_DIRECTORY}")
 else:
-    print(f"تم العثور على {len(csv_files)} ملفات. جاري بدء المعالجة...")
+    print(f"Found {len(csv_files)} in this Directory")
 
 
 for file_path in csv_files:
@@ -39,7 +39,7 @@ for file_path in csv_files:
     base_name = os.path.basename(file_path)
     table_name = os.path.splitext(base_name)[0].upper() 
     
-    print(f"⏳ جاري قراءة ملف: {base_name}...")
+    print(f"Loading {base_name}...")
     
 
     df = spark.read.csv(
@@ -48,15 +48,8 @@ for file_path in csv_files:
         inferSchema=True
     )
     
-    print(f"🚀 جاري رفع البيانات إلى جدول: {table_name} في Snowflake...")
+    print(f"Loading to {table_name} in Snowflake...")
     
-    print("========== SNOWFLAKE CONFIG ==========")
-    print("ACCOUNT:", os.getenv("SNOWFLAKE_ACCOUNT"))
-    print("USER:", os.getenv("SNOWFLAKE_USER"))
-    print("DATABASE:", os.getenv("SNOWFLAKE_DATABASE"))
-    print("SCHEMA:", os.getenv("SNOWFLAKE_SCHEMA"))
-    print("WAREHOUSE:", os.getenv("SNOWFLAKE_WAREHOUSE"))
-    print("=======================================")
 
     df.write \
         .format("snowflake") \
@@ -65,7 +58,5 @@ for file_path in csv_files:
         .mode("overwrite") \
         .save()
         
-    print(f"✅ تم رفع جدول {table_name} بنجاح!\n" + "-"*40)
-
-print("🎉 اكتملت عملية الـ Batch بنجاح.")
+    print(f"{table_name} Loaded successfully\n" + "-"*40)
 spark.stop()
