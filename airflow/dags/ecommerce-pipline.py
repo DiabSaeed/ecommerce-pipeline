@@ -60,14 +60,19 @@ with DAG(
         image='ecommerce-datapipeline-dbt:latest',
         api_version='auto',
         auto_remove='force',
-        command='run --profiles-dir /usr/app/dbt',
+        command='run --profiles-dir /usr/app/profiles',
         docker_url='unix://var/run/docker.sock',
         network_mode='ecommerce-datapipeline_data_pipeline',
         mount_tmp_dir=False,
         mounts=[
             Mount(
-                source='/home/diab_saeed/Projects/ecommerce-datapipeline/dbt_project',
+                source='/home/diab_saeed/Projects/ecommerce-datapipeline/dbt_project/Ecommerce',
                 target='/usr/app/dbt',
+                type='bind'
+            ),
+            Mount(
+                source='/home/diab_saeed/Projects/ecommerce-datapipeline/dbt_project/profiles',
+                target='/usr/app/profiles',
                 type='bind'
             )
         ],
