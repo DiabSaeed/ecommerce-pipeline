@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: ecommerce
+    database: "{{env_var('SNOWFLAKE_DATABASE')}}"
+    schema: "{{env_var('SNOWFLAKE_SCHEMA')}}"
+    tables:
+      - name: customers
+        identifier: CUSTOMERS_DATA
+      - name: orders
+        identifier: RAW_ORDERS
+      - name: items
+        identifier: RAW_ORDER_ITEMS
+      - name: products
+        identifier: PRODUCTS_DATA
