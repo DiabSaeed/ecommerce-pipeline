@@ -1,0 +1,51 @@
+product_id,product_name,category,base_price,supplier_id,current_price,last_updated_at
+101,Product_101,Clothing,26.09,7,26.09,2026-01-01
+102,Product_102,Electronics,457.25,8,457.25,2026-01-01
+103,Product_103,Electronics,131.63,6,131.63,2026-01-01
+104,Product_104,Sports,293.04,9,293.04,2026-01-01
+105,Product_105,Home & Garden,91.1,5,91.1,2026-01-01
+106,Product_106,Sports,26.6,3,26.6,2026-01-01
+107,Product_107,Sports,162.62,3,162.62,2026-01-01
+108,Product_108,Sports,392.44,1,392.44,2026-01-01
+109,Product_109,Sports,146.02,8,146.02,2026-01-01
+110,Product_110,Books,117.85,2,117.85,2026-01-01
+111,Product_111,Books,114.21,3,114.21,2026-01-01
+112,Product_112,Clothing,262.44,8,262.44,2026-01-01
+113,Product_113,Electronics,488.02,8,488.02,2026-01-01
+114,Product_114,Sports,234.9,4,234.9,2026-01-01
+115,Product_115,Clothing,283.08,4,283.08,2026-01-01
+116,Product_116,Electronics,431.71,5,431.71,2026-01-01
+117,Product_117,Home & Garden,272.18,6,272.18,2026-01-01
+118,Product_118,Books,100.39,5,100.39,2026-01-01
+119,Product_119,Electronics,156.8,7,156.8,2026-01-01
+120,Product_120,Home & Garden,161.87,2,161.87,2026-01-01
+121,Product_121,Electronics,204.69,7,204.69,2026-01-01
+122,Product_122,Books,219.13,7,219.13,2026-01-01
+123,Product_123,Books,401.89,1,401.89,2026-01-01
+124,Product_124,Clothing,181.2,7,181.2,2026-01-01
+125,Product_125,Sports,239.43,5,239.43,2026-01-01
+126,Product_126,Electronics,316.24,3,316.24,2026-01-01
+127,Product_127,Electronics,195.09,3,195.09,2026-01-01
+128,Product_128,Home & Garden,419.92,4,419.92,2026-01-01
+129,Product_129,Books,297.85,2,297.85,2026-01-01
+130,Product_130,Electronics,154.08,2,154.08,2026-01-01
+131,Product_131,Books,359.89,1,359.89,2026-01-01
+132,Product_132,Electronics,268.55,5,268.55,2026-01-01
+133,Product_133,Clothing,271.88,4,271.88,2026-01-01
+134,Product_134,Sports,245.73,2,245.73,2026-01-01
+135,Product_135,Electronics,253.54,3,253.54,2026-01-01
+136,Product_136,Books,385.02,7,385.02,2026-01-01
+137,Product_137,Clothing,60.46,7,60.46,2026-01-01
+138,Product_138,Electronics,173.84,4,173.84,2026-01-01
+139,Product_139,Home & Garden,47.0,5,47.0,2026-01-01
+140,Product_140,Sports,379.09,5,379.09,2026-01-01
+141,Product_141,Electronics,143.43,6,143.43,2026-01-01
+142,Product_142,Clothing,449.74,9,449.74,2026-01-01
+143,Product_143,Home & Garden,268.02,2,268.02,2026-01-01
+144,Product_144,Clothing,402.37,5,402.37,2026-01-01
+145,Product_145,Clothing,489.68,3,489.68,2026-01-01
+146,Product_146,Home & Garden,421.5,4,421.5,2026-01-01
+147,Product_147,Clothing,434.83,6,434.83,2026-01-01
+148,Product_148,Home & Garden,209.91,8,209.91,2026-01-01
+149,Product_149,Electronics,280.34,1,280.34,2026-01-01
+150,Product_150,Home & Garden,134.41,8,134.41,2026-01-01
